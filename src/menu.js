@@ -11,13 +11,13 @@ export class ContextMenu extends Menu {
     super(selector);
     document.body.addEventListener("contextmenu", (event) => {
       event.preventDefault();
+      this.open(event);
       const { correctX, correctY } = changePosition(
         event.clientX,
         event.clientY
       );
       this.el.style.left = `${correctX}px`;
       this.el.style.top = `${correctY}px`;
-      this.open(event);
     });
   }
 

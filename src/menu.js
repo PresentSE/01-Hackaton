@@ -1,6 +1,7 @@
 import { Menu } from "./core/menu";
 import { changePosition } from "./util_func";
 import { ShapeModule } from "./modules/shape.module";
+import { Sound } from "./modules/sound.module";
 
 export class ContextMenu extends Menu {
   constructor(selector) {
@@ -27,6 +28,8 @@ export class ContextMenu extends Menu {
 
   add() {
     const shapeModule = new ShapeModule("shape", "Создать фигуру").toHTML();
+    const soundModule = new Sound("sound", "Случайный звук").toHTML();
     this.el.insertAdjacentHTML("afterbegin", shapeModule);
+    this.el.insertAdjacentHTML("afterbegin", soundModule);
   }
 }

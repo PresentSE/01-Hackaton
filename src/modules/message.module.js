@@ -8,6 +8,7 @@ export class MessageModule extends Module {
       const elem = document.querySelector(`[data-type="${type}"]`);
       if (event.target === elem) {
         this.trigger();
+        elem.parentElement.className = "menu";
       }
     });
   }

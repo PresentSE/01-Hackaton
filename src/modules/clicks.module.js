@@ -1,5 +1,5 @@
 import {Module} from '../core/module'
-import {createCountClick} from'src/util_func_countClick'
+import {createCountClick} from 'src/util_func_clickModule'
 
 export class ClicksModule extends Module {
    constructor() {

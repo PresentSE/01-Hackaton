@@ -1,6 +1,6 @@
 import { Module } from "../core/module";
 import { random } from "../utils";
-import audio11 from "../assets/audio/sound1.mp3";
+import { soundsArray } from "../utils";
 
 export class Sound extends Module {
   constructor(type, text) {
@@ -16,11 +16,14 @@ export class Sound extends Module {
 
   trigger() {
     const audio = document.createElement("audio");
-    //audio.src = `../assets/audio/sound${random(1, 26)}.mp3`;
-    audio.src = audio11;
+    audio.src = soundsArray[random(0, 25)];
     document.body.append(audio);
 
     audio.currentTime = 0;
     audio.play();
+
+    setTimeout(() => {
+      audio.remove();
+    }, 2000);
   }
 }

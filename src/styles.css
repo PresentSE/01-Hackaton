@@ -13,6 +13,7 @@ body {
   width: 100%;
   padding: 2rem;
   overflow: hidden;
+  cursor: none;
 }
 
 .menu {
@@ -33,7 +34,6 @@ body {
   padding: 8px 10px;
   font-size: 1rem;
   color: #eee;
-  cursor: pointer;
   transition: background-color 0.2s ease-in;
   border-radius: inherit;
 }
@@ -70,7 +70,11 @@ body {
   bottom: 4%;
   left: 50%;
   transform: translateX(-50%);
-  transition: 0.5s all ease-in;
+  transition: 0.2s all ease-in;
+}
+
+.custom-message:hover{
+  transform: translateX(-50%) translateY(2px);
 }
 
 .custom-message-active {
@@ -93,7 +97,7 @@ body {
   transform: translateY(-50%);
   border: none;
   background-color: transparent;
-  cursor: pointer;
+  cursor: none;
 }
 
 .message-close-button::after {
@@ -121,4 +125,79 @@ body {
 .custom-message-text {
   font-size: 30px;
   font-weight: 700;
+}
+
+.cursor {
+  width: 40px;
+  height: 40px;
+  border: 3px solid black;
+  border-radius: 50%;
+  position: absolute;
+  transition-duration: 200ms;
+  transition-timing-function: ease-out;
+  animation: cursorAnim .5s infinite alternate;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.cursor::after {
+  content: "";
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  border: 12px solid gray;
+  border-radius: 50%;
+  opacity: .5;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: cursorAnim2 .5s infinite alternate;
+}
+
+.cursor::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: black;
+}
+
+@keyframes cursorAnim {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(.7);
+  }
+}
+
+@keyframes cursorAnim2 {
+  from {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  to {
+    transform: translate(-50%, -50%) scale(.6);
+  }
+}
+
+@keyframes cursorAnim3 {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(3);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+.expand {
+  animation: cursorAnim3 .5s forwards;
+  border: 1px solid #000000;
 }

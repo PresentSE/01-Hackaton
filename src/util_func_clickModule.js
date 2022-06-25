@@ -34,7 +34,10 @@ export function createCountClick() {
 
     setTimeout(() => {
         const getMessage = document.querySelector('.custom-message')
-        getMessage.remove()
+        getMessage.classList.add('custom-message-disabled')
+        setTimeout(() => {
+            getMessage.remove()
+        }, 2001)
     }, 6000)
 
 }

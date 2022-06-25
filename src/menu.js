@@ -5,19 +5,20 @@ import { Sound } from "./modules/sound.module";
 import { MessageModule } from "./modules/message.module";
 import { ClicksModule } from "./modules/clicks.module";
 import { BackgroundModule } from "./modules/background.module";
+import { TimerModule } from "./modules/timer.module";
 
 export class ContextMenu extends Menu {
   constructor(selector) {
     super(selector);
     document.body.addEventListener("contextmenu", (event) => {
       event.preventDefault();
+      this.open(event);
       const { correctX, correctY } = changePosition(
         event.clientX,
         event.clientY
       );
       this.el.style.left = `${correctX}px`;
       this.el.style.top = `${correctY}px`;
-      this.open(event);
     });
   }
 
@@ -44,6 +45,7 @@ export class ContextMenu extends Menu {
       "background",
       "Изменить фон"
     ).toHTML();
+    const timerModule = new TimerModule("timer", "Таймер отсчёта").toHTML();
     this.el.insertAdjacentHTML(
       "afterbegin",
       `
@@ -52,6 +54,7 @@ export class ContextMenu extends Menu {
     ${messageModule}
     ${clicksModule}
     ${backgroundModule}
+    ${timerModule}
    `
     );
   }

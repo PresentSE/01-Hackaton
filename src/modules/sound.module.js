@@ -24,6 +24,6 @@ export class Sound extends Module {
 
     setTimeout(() => {
       audio.remove();
-    }, 2000);
+    }, 3000);
   }
 }

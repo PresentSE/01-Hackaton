@@ -1,5 +1,24 @@
+import {random} from './utils'
+
+function getRandomColor() {
+    const letters = "0123456789ABCDEF";
+    let color = "#";
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
 export function createCountClick() {
-    const getDiv = document.querySelector('')
+
+    const message = document.createElement('div');
+    const text = document.createElement('p');
+
+    message.className = 'custom-message custom-message-active';
+    message.style.background = `linear-gradient(${random(0, 359)}deg, ${getRandomColor()}, ${getRandomColor()})`;
+    text.className = 'custom-message-text';
+    text.innerText = '';
+
+    message.append(text);
 
     let count = 0
     document.body.addEventListener('click', (event) => {
@@ -7,11 +26,15 @@ export function createCountClick() {
     })
 
     setTimeout(() => {
-        getDiv.textContent = `Вы совершили ${count} кликов`
-        getDiv.style.opacity = '1'
+
+        text.innerText = `Вы совершили ${count} кликов`
+        document.body.append(message);
+
     }, 3000)
 
     setTimeout(() => {
-        getDiv.style.opacity = '0'
+        const getMessage = document.querySelector('.custom-message')
+        getMessage.remove()
     }, 6000)
+
 }

@@ -54,5 +54,9 @@ export class ShapeModule extends Module {
         shape.style.left = `${random(0, (document.body.getBoundingClientRect().width * 0.8))}px`;
         document.body.style.overflow = 'hidden';
         document.body.append(shape);
+
+        setTimeout(() => {
+            shape.remove();
+        }, 2001)
     }
 }

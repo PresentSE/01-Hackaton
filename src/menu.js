@@ -1,5 +1,6 @@
 import { Menu } from "./core/menu";
 import { changePosition } from "./util_func";
+import { ShapeModule } from "./modules/shape.module";
 
 export class ContextMenu extends Menu {
   constructor(selector) {
@@ -25,6 +26,7 @@ export class ContextMenu extends Menu {
   }
 
   add() {
-    console.log(this.el);
+    const shapeModule = new ShapeModule("shape", "Создать фигуру").toHTML();
+    this.el.insertAdjacentHTML("afterbegin", shapeModule);
   }
 }

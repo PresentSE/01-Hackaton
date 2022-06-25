@@ -8,10 +8,10 @@ export function createCountClick() {
 
     setTimeout(() => {
         getDiv.textContent = `Вы совершили ${count} кликов`
-        getDiv.removeAttribute('hidden')
+        getDiv.style.opacity = '1'
     }, 3000)
 
     setTimeout(() => {
-        getDiv.setAttribute('hidden', '')
+        getDiv.style.opacity = '0'
     }, 6000)
 }

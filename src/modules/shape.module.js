@@ -5,7 +5,6 @@ import { getRandomColor } from "@/utils";
 export class ShapeModule extends Module {
   constructor(type, text) {
     super(type, text);
-
     document.body.addEventListener("click", (event) => {
       const elem = document.querySelector(`[data-type="${type}"]`);
       if (event.target === elem) {
@@ -76,5 +75,9 @@ export class ShapeModule extends Module {
     )}px`;
     document.body.style.overflow = "hidden";
     document.body.append(shape);
+
+    setTimeout(() => {
+      shape.remove();
+    }, 2001);
   }
 }

@@ -50,11 +50,11 @@ body {
 @keyframes scaling {
   0% {
     opacity: 1;
-    transform: scale(1);
+    transform: scale(1) rotateZ(5deg);
   }
   100% {
     opacity: 0;
-    transform: scale(1.1);
+    transform: scale(1.1) rotateZ(0);
   }
 }
 

@@ -1,4 +1,4 @@
 import "./styles.css";
 import { ContextMenu } from "./menu";
 
-const runContextMenuApp = new ContextMenu(".menu");
+new ContextMenu(".menu").add();

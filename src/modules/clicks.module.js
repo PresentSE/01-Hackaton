@@ -1,11 +1,17 @@
-import {Module} from '../core/module'
-import {createCountClick} from 'src/util_func_clickModule'
+import { Module } from "../core/module";
+import { createCountClick } from "../util_func_clickModule";
 
 export class ClicksModule extends Module {
-   constructor() {
-       super('click', 'Аналитика кликов');
-   }
-   trigger() {
-    createCountClick()
-   }
+  constructor(type, text) {
+    super(type, text);
+    document.body.addEventListener("click", (event) => {
+      const elem = document.querySelector(`[data-type="${type}"]`);
+      if (event.target === elem) {
+        this.trigger();
+      }
+    });
+  }
+  trigger() {
+    createCountClick();
+  }
 }

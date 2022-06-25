@@ -3,6 +3,8 @@ import { changePosition } from "./util_func";
 import { ShapeModule } from "./modules/shape.module";
 import { Sound } from "./modules/sound.module";
 import { MessageModule } from "./modules/message.module";
+import { ClicksModule } from "./modules/clicks.module";
+import { BackgroundModule } from "./modules/background.module";
 
 export class ContextMenu extends Menu {
   constructor(selector) {
@@ -34,12 +36,22 @@ export class ContextMenu extends Menu {
       "message",
       "Создать сообщение"
     ).toHTML();
+    const clicksModule = new ClicksModule(
+      "click",
+      "Расчет кликов за 3 сек"
+    ).toHTML();
+    const backgroundModule = new BackgroundModule(
+      "background",
+      "Изменить фон"
+    ).toHTML();
     this.el.insertAdjacentHTML(
       "afterbegin",
       `
     ${shapeModule}
     ${soundModule}
     ${messageModule}
+    ${clicksModule}
+    ${backgroundModule}
    `
     );
   }

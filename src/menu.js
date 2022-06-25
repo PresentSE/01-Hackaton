@@ -5,6 +5,7 @@ import { Sound } from "./modules/sound.module";
 import { MessageModule } from "./modules/message.module";
 import { ClicksModule } from "./modules/clicks.module";
 import { BackgroundModule } from "./modules/background.module";
+import { TimerModule } from "./modules/timer.module";
 
 export class ContextMenu extends Menu {
   constructor(selector) {
@@ -44,6 +45,7 @@ export class ContextMenu extends Menu {
       "background",
       "Изменить фон"
     ).toHTML();
+    const timerModule = new TimerModule("timer", "Таймер отсчёта").toHTML();
     this.el.insertAdjacentHTML(
       "afterbegin",
       `
@@ -52,6 +54,7 @@ export class ContextMenu extends Menu {
     ${messageModule}
     ${clicksModule}
     ${backgroundModule}
+    ${timerModule}
    `
     );
   }

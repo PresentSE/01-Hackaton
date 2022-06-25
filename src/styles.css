@@ -40,3 +40,19 @@ body {
 .menu .menu-item:hover {
     background: #343434;
 }
+
+.random-shape {
+    animation: scaling 2s ease-in;
+    opacity: 0;
+}
+
+@keyframes scaling {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.1);
+    }
+}

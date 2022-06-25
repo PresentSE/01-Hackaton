@@ -56,5 +56,3 @@ export class ShapeModule extends Module {
         document.body.append(shape);
     }
 }
-
-

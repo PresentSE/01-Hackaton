@@ -29,11 +29,12 @@ export class TimerModule extends Module {
     document.body.append(timerDiv);
 
     let time = prompt("Введите количество секунд для обратного отсчета.");
-    time = Number(time.trim());
     if (!time || time % 1 > 0 || time <= 0) {
       document.querySelector(".timer-container").remove();
       alert("Введенные данные должны быть целым положительным числом!");
     }
+    time = Number(time.trim());
+
     timer.innerHTML = `${time}`;
     const countTimer = setInterval(() => {
       let changer = --time;

@@ -1,3 +1,5 @@
+import greetings from "./assets/audio/greetings.mp3";
+
 import answer1 from "./assets/audio/answer-1.mp3";
 import answer2 from "./assets/audio/answer-2.mp3";
 import answer3 from "./assets/audio/answer-3.mp3";
@@ -9,6 +11,7 @@ import answer8 from "./assets/audio/answer-8.mp3";
 import answer9 from "./assets/audio/answer-9.mp3";
 import answer10 from "./assets/audio/answer-10.mp3";
 
+export const audioGreeting = greetings;
 export const answersArray = [
   answer1,
   answer2,

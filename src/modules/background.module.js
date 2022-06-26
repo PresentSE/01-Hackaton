@@ -15,7 +15,7 @@ export class BackgroundModule extends Module {
 
   trigger() {
     const color = getRandomColor();
-    document.body.style.transition = "background 0.5s linear";
+    document.body.style.transition = "background 0.4s linear";
     document.body.style.backgroundColor = color;
   }
 }

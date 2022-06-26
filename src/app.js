@@ -8,6 +8,7 @@ import {BackgroundModule} from "@/modules/background.module";
 import {TimerModule} from "@/modules/timer.module";
 import {random} from "@/utils";
 import {answersArray} from "@/utils";
+import {WeatherModule} from "./modules/weather.module";
 
 
 const contextMenu = new ContextMenu(".menu");
@@ -17,6 +18,7 @@ contextMenu.add(new MessageModule("message", "Создать сообщение"
 contextMenu.add(new ClicksModule("click", "Расчет кликов за 3 сек"));
 contextMenu.add(new BackgroundModule("background", "Изменить фон"));
 contextMenu.add(new TimerModule("timer", "Таймер отсчёта"));
+contextMenu.add(new WeatherModule("weather", "Узнать погоду"));
 
 
 

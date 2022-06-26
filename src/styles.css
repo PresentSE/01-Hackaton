@@ -201,3 +201,27 @@ body {
   animation: cursorAnim3 .5s forwards;
   border: 1px solid #000000;
 }
+
+.weather {
+  background: linear-gradient(to bottom right, blue, black);
+  padding: 10px;
+  color: white;
+  width: 250px;
+  height: 220px;
+  text-align: center;
+  border: 3px solid #fafafa;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.timer-container {
+  background: linear-gradient(to bottom right, teal, darkgreen);
+  padding: 10px;
+  color: white;
+  width: 310px;
+  height: 80px;
+  text-align: center;
+  border: 3px solid #fafafa;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}

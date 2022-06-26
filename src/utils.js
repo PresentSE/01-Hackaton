@@ -1,5 +1,11 @@
 import greetings from "./assets/audio/greetings.mp3";
 
+import farewell1 from "./assets/audio/farewell-1.mp3";
+import farewell2 from "./assets/audio/farewell-2.mp3";
+import farewell3 from "./assets/audio/farewell-3.mp3";
+import farewell4 from "./assets/audio/farewell-4.mp3";
+import farewell5 from "./assets/audio/farewell-5.mp3";
+
 import answer1 from "./assets/audio/answer-1.mp3";
 import answer2 from "./assets/audio/answer-2.mp3";
 import answer3 from "./assets/audio/answer-3.mp3";
@@ -12,6 +18,13 @@ import answer9 from "./assets/audio/answer-9.mp3";
 import answer10 from "./assets/audio/answer-10.mp3";
 
 export const audioGreeting = greetings;
+export const farewellArray = [
+  farewell1,
+  farewell2,
+  farewell3,
+  farewell4,
+  farewell5
+];
 export const answersArray = [
   answer1,
   answer2,

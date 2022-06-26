@@ -7,6 +7,7 @@ import {BackgroundModule} from "@/modules/background.module";
 import {TimerModule} from "@/modules/timer.module";
 import {answersArray, random} from "@/utils";
 import {audioGreeting} from "@/utils";
+import {farewellArray} from "@/utils";
 import {WeatherModule} from "@/modules/weather.module";
 import {ExchangeRate} from "@/modules/exchange_rate.module";
 
@@ -93,7 +94,21 @@ export class VoiceAssistant extends Module {
         const waveElement = document.querySelector('.first');
         const wavesMark = document.querySelector('.waves-mark');
 
+        const createFarewell = () => {
+            const farewell = document.createElement("audio");
+            farewell.src = farewellArray[random(0, 3)];
+            document.body.append(farewell);
+
+            farewell.currentTime = 0;
+            farewell.play();
+
+            setTimeout(() => {
+                farewell.remove();
+            }, 6000);
+        }
+
         closeButton.addEventListener('click', () => {
+            createFarewell();
             container.remove();
             if (SpeechRecognition) {
                 SpeechRecognition = null;

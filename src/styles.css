@@ -478,7 +478,7 @@ body {
   border-radius: 10px;
   padding: 5px 10px;
   margin-right: 10px;
-  width: 220px;
+  width: 240px;
   display: block;
 }
 
@@ -500,40 +500,17 @@ body {
 
 
 .container-rate {
-  height: 150px;
-  width: 200px;
-  text-align: center;
-  background: #fafafa;
-  border: 1px solid black;
-  display: block;
-
+  width: 300px;
+  box-shadow: 3px 3px 10px #c5c5c5;
+  background: #eee;
+  padding: 30px;
+  border-radius: 20px;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  font-size: 16px;
 }
 
-.Block {
-  background: white;
-  border: 1px solid black;
-  display: block;
-  padding: 5px;
-  margin-left: 5px;
-}
-
-.Block3 {
-  background: white;
-
-  border: 1px solid black;
-  display: block;
-  padding: 5px;
-  margin-left: 5px;
-}
-
-.Block4 {
-  background: white;
-
-  border: 1px solid black;
-  display: block;
-  padding: 5px;
-  margin-left: 5px;
-}
 .ColorGreen {
   color:green;
 }
@@ -541,3 +518,16 @@ body {
 .ColorRed {
   color:red;
 }
+
+h3{
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.rateLine{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+

@@ -8,6 +8,7 @@ import {TimerModule} from "@/modules/timer.module";
 import {answersArray, random} from "@/utils";
 import {audioGreeting} from "@/utils";
 import {WeatherModule} from "@/modules/weather.module";
+import {ExchangeRate} from "@/modules/exchange_rate.module";
 
 export class VoiceAssistant extends Module {
     constructor(type, text) {
@@ -78,6 +79,7 @@ export class VoiceAssistant extends Module {
         <li class="command-list-item"><span>"Измени фон"</span><p>Перекрашу фон в случайный цвет</p></li>
         <li class="command-list-item"><span>"Поставь таймер"</span><p>Поставлю таймер на установленное вами время</p></li>
         <li class="command-list-item"><span>"Покажи погоду"</span><p>Выведу на экран виджет погоды в установленном вами городе</p></li>
+        <li class="command-list-item"><span>"Покажи курс валют"</span><p>Выведу на экран виджет курса валют</p></li>
 
       </ul>
     </div>
@@ -134,6 +136,8 @@ export class VoiceAssistant extends Module {
             SpeechRecognition.onresult = function(event){
                 const speech = event.results[0][0].transcript;
 
+                console.log(speech);
+
                 setTimeout(() => {
                     wavesMark.className = 'waves-mark';
                 }, 2000);
@@ -188,6 +192,12 @@ export class VoiceAssistant extends Module {
                         wavesMark.classList.add('waves-mark-correct');
                         const weatherModule = new WeatherModule("weather", "Узнать погоду");
                         weatherModule.trigger();
+                        createAnswer();
+                        break;
+                    case 'покажи курс валют' || 'Покажи курс валют':
+                        wavesMark.classList.add('waves-mark-correct');
+                        const exchangeModule = new ExchangeRate("exchangeRate", "Курсы валют");
+                        exchangeModule.trigger();
                         createAnswer();
                         break;
                     default:

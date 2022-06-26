@@ -17,6 +17,7 @@ export class ExchangeRate extends Module {
       document.querySelector('.container-rate').remove();
   }
     const createBlock = (usd, eur, difUSD, difEUR) => {
+
       const createDiv = document.createElement('div');
       const createDiv1 = document.createElement('div');
       const createDiv2 = document.createElement('div');
@@ -24,16 +25,16 @@ export class ExchangeRate extends Module {
       const createDiv4 = document.createElement('div');
       const createDivDifUSD = document.createElement('div');
       const createDivDifEUR = document.createElement('div');
+      const rateLine = document.createElement('div');
+      const rateLine2 = document.createElement('div');
   
       const createH3 = document.createElement('h3');
   
       createDiv.className = 'container-rate';
-      createDiv1.className = 'Block';
-      createDiv2.className = 'Block';
       createDiv3.className = 'Block3';
       createDiv4.className = 'Block4';
-      createDivDifUSD.className = 'Block';
-      createDivDifEUR.className = 'Block';
+      rateLine.className = 'rateLine';
+      rateLine2.className = 'rateLine';
   
       createH3.textContent = 'Курс валют';
       createDiv1.textContent = 'USD';
@@ -43,8 +44,10 @@ export class ExchangeRate extends Module {
       createDivDifUSD.textContent = `${difUSD}%`;
       createDivDifEUR.textContent = `${difEUR}%`;
   
-  
-      createDiv.append(createH3, createDiv1, createDiv2, createDiv3, createDiv4, createDivDifUSD, createDivDifEUR);
+      rateLine.append(createDiv1, createDiv3, createDivDifUSD);
+      rateLine2.append(createDiv2, createDiv4, createDivDifEUR);
+
+      createDiv.append(createH3, rateLine, rateLine2);
       document.body.append(createDiv);
 
       createDiv.addEventListener('click', () => {

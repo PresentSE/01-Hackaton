@@ -12,6 +12,7 @@ import {ExchangeRate} from "./modules/exchange_rate.module";
 
 
 const contextMenu = new ContextMenu(".menu");
+contextMenu.add(new VoiceAssistant("voice", "Голосовой ассистент"));
 contextMenu.add(new ShapeModule("shape", "Создать фигуру"));
 contextMenu.add(new Sound("sound", "Случайный звук"));
 contextMenu.add(new MessageModule("message", "Создать сообщение"))
@@ -20,7 +21,6 @@ contextMenu.add(new BackgroundModule("background", "Изменить фон"));
 contextMenu.add(new TimerModule("timer", "Таймер отсчёта"));
 contextMenu.add(new WeatherModule("weather", "Узнать погоду"));
 contextMenu.add(new ExchangeRate("exchangeRate", "Курсы валют"));
-contextMenu.add(new VoiceAssistant("voice", "Голосовой ассистент"));
 
 
 // Cursor

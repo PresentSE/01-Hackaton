@@ -497,3 +497,47 @@ body {
   font-size: 16px;
   color: #7c7c7c;
 }
+
+
+.container-rate {
+  height: 150px;
+  width: 200px;
+  text-align: center;
+  background: #fafafa;
+  border: 1px solid black;
+  display: block;
+
+}
+
+.Block {
+  background: white;
+  border: 1px solid black;
+  display: block;
+  padding: 5px;
+  margin-left: 5px;
+}
+
+.Block3 {
+  background: white;
+
+  border: 1px solid black;
+  display: block;
+  padding: 5px;
+  margin-left: 5px;
+}
+
+.Block4 {
+  background: white;
+
+  border: 1px solid black;
+  display: block;
+  padding: 5px;
+  margin-left: 5px;
+}
+.ColorGreen {
+  color:green;
+}
+
+.ColorRed {
+  color:red;
+}

@@ -1,13 +1,14 @@
 import "./styles.css";
 import { ContextMenu } from "./menu";
-import {ShapeModule} from "@/modules/shape.module";
-import {Sound} from "@/modules/sound.module";
-import {MessageModule} from "@/modules/message.module";
-import {ClicksModule} from "@/modules/clicks.module";
-import {BackgroundModule} from "@/modules/background.module";
-import {TimerModule} from "@/modules/timer.module";
+import {ShapeModule} from "./modules/shape.module";
+import {Sound} from "./modules/sound.module";
+import {MessageModule} from "./modules/message.module";
+import {ClicksModule} from "./modules/clicks.module";
+import {BackgroundModule} from "./modules/background.module";
+import {TimerModule} from "./modules/timer.module";
 import {WeatherModule} from "./modules/weather.module";
-import {VoiceAssistant} from "@/modules/voiceAssistantInterface.module";
+import {VoiceAssistant} from "./modules/voiceAssistantInterface.module";
+import {ExchangeRate} from "./modules/exchange_rate.module";
 
 
 const contextMenu = new ContextMenu(".menu");
@@ -18,6 +19,7 @@ contextMenu.add(new ClicksModule("click", "Расчет кликов за 3 се
 contextMenu.add(new BackgroundModule("background", "Изменить фон"));
 contextMenu.add(new TimerModule("timer", "Таймер отсчёта"));
 contextMenu.add(new WeatherModule("weather", "Узнать погоду"));
+contextMenu.add(new ExchangeRate("exchangeRate", "Курсы валют"));
 contextMenu.add(new VoiceAssistant("voice", "Голосовой ассистент"));
 
 

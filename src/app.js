@@ -1,6 +1,5 @@
 import "./styles.css";
 import { ContextMenu } from "./menu";
-//import {cursor} from "@/cursor";
 import {ShapeModule} from "@/modules/shape.module";
 import {Sound} from "@/modules/sound.module";
 import {MessageModule} from "@/modules/message.module";

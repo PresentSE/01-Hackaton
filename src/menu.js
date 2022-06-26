@@ -28,23 +28,4 @@ export class ContextMenu extends Menu {
     this.el.insertAdjacentHTML('beforeend', module.toHTML());
         const newModule = this.el.querySelector(`[data-type='${module.type}']`);
     }
-    /*
-    const shapeModule = new ShapeModule("shape", "Создать фигуру").toHTML();
-    const soundModule = new Sound("sound", "Случайный звук").toHTML();
-    const messageModule = new MessageModule("message", "Создать сообщение").toHTML();
-    const clicksModule = new ClicksModule("click", "Расчет кликов за 3 сек").toHTML();
-    const backgroundModule = new BackgroundModule("background", "Изменить фон").toHTML();
-    const timerModule = new TimerModule("timer", "Таймер отсчёта").toHTML();
-    this.el.insertAdjacentHTML(
-      "afterbegin",
-      `
-    ${shapeModule}
-    ${soundModule}
-    ${messageModule}
-    ${clicksModule}
-    ${backgroundModule}
-    ${timerModule}
-   `
-    );
-    */
   }

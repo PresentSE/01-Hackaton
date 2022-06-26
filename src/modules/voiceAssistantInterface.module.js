@@ -82,6 +82,7 @@ export class VoiceAssistant extends Module {
         <li class="command-list-item"><span>"Покажи курс валют"</span><p>Выведу на экран виджет курса валют</p></li>
 
       </ul>
+      <p class="infotip">Виджет можно закрыть кликом)</p>
     </div>
 `);
         document.body.append(container);

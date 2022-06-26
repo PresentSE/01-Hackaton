@@ -203,6 +203,7 @@ body {
 }
 
 .weather {
+  position: relative;
   background: linear-gradient(45deg, #ff3ce9, #4d94ff);
   padding: 10px;
   color: #fff;

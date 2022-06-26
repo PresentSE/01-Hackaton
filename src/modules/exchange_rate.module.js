@@ -18,6 +18,7 @@ export class ExchangeRate extends Module {
   }
     const createBlock = (usd, eur, difUSD, difEUR) => {
 
+        const closeButton = document.createElement('div');
       const createDiv = document.createElement('div');
       const createDiv1 = document.createElement('div');
       const createDiv2 = document.createElement('div');
@@ -29,7 +30,8 @@ export class ExchangeRate extends Module {
       const rateLine2 = document.createElement('div');
   
       const createH3 = document.createElement('h3');
-  
+
+      closeButton.className = 'speech-close-button';
       createDiv.className = 'container-rate';
       createDiv3.className = 'Block3';
       createDiv4.className = 'Block4';
@@ -47,13 +49,12 @@ export class ExchangeRate extends Module {
       rateLine.append(createDiv1, createDiv3, createDivDifUSD);
       rateLine2.append(createDiv2, createDiv4, createDivDifEUR);
 
-      createDiv.append(createH3, rateLine, rateLine2);
+      createDiv.append(createH3, rateLine, rateLine2, closeButton);
       document.body.append(createDiv);
 
-      createDiv.addEventListener('click', () => {
-        createDiv.remove();
-    });
-
+        closeButton.addEventListener('click', () => {
+            createDiv.remove();
+        })
   }
   
 

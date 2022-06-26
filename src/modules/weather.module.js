@@ -19,15 +19,21 @@ export class WeatherModule extends Module {
     }
 
     const createDiv = document.createElement('div');
+    const closeButton = document.createElement('div');
+
+      closeButton.className = 'speech-close-button';
 
     const addDiv = (city, temp, description, speedWind, icon) => {
 
         createDiv.className = ('weather');
+
         const createH3 = document.createElement('h3');
         const createIcon = document.createElement('img');
         const createP1 = document.createElement('p');
         const createP2 = document.createElement('p');
         const createP3 = document.createElement('p');
+
+
     
         createH3.textContent = `город ${city}`;
         createP1.textContent = `температура ${temp} ℃`;
@@ -35,13 +41,13 @@ export class WeatherModule extends Module {
         createP3.textContent = `скорость ветра ${speedWind} м/c`;
         createIcon.src=`https://openweathermap.org/img/wn/${icon}@2x.png`;
     
-        createDiv.append(createH3,createIcon, createP1, createP2, createP3);
+        createDiv.append(createH3,createIcon, createP1, createP2, createP3, closeButton);
         document.body.append(createDiv);
     }
 
-    createDiv.addEventListener('click', () => {
-        createDiv.remove();
-    });
+  closeButton.addEventListener('click', () => {
+      createDiv.remove();
+  })
 
     function getWeather(city) {
         const key = 'f0c9687935c00eb5e36c5323c555bec9';

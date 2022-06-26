@@ -152,8 +152,6 @@ export class VoiceAssistant extends Module {
             SpeechRecognition.onresult = function(event){
                 const speech = event.results[0][0].transcript;
 
-                console.log(speech);
-
                 setTimeout(() => {
                     wavesMark.className = 'waves-mark';
                 }, 2000);

@@ -1,5 +1,5 @@
 import { Module } from "../core/module";
-import { createCountClick } from "../util_func_clickModule";
+import { createCountClick } from "../utils";
 
 export class ClicksModule extends Module {
   constructor(type, text) {

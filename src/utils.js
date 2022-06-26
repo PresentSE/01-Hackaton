@@ -90,3 +90,55 @@ export function getRandomColor() {
   }
   return color;
 }
+
+export function changePosition(mouseX, mouseY) {
+  const body = document.body;
+  const menu = document.querySelector(".menu");
+  const bodyX = body.getBoundingClientRect().width;
+  const bodyY = body.getBoundingClientRect().height;
+  let correctX = mouseX;
+  let correctY = mouseY;
+
+  if (mouseX + menu.clientWidth > bodyX) {
+    correctX = bodyX - menu.clientWidth;
+  }
+  if (mouseY + menu.clientHeight > bodyY) {
+    correctY = bodyY - menu.clientHeight;
+  }
+
+  return { correctX, correctY };
+}
+
+export function createCountClick() {
+
+  const message = document.createElement('div');
+  const text = document.createElement('p');
+
+  message.className = 'custom-message custom-message-active';
+  message.style.background = `linear-gradient(${random(0, 359)}deg, ${getRandomColor()}, ${getRandomColor()})`;
+  text.className = 'custom-message-text';
+  text.innerText = '';
+
+  message.append(text);
+
+  let count = 0
+  document.body.addEventListener('click', (event) => {
+      count += 1
+  })
+
+  setTimeout(() => {
+
+      text.innerText = `Вы совершили ${count} кликов`
+      document.body.append(message);
+
+  }, 3000)
+
+  setTimeout(() => {
+      const getMessage = document.querySelector('.custom-message')
+      getMessage.classList.add('custom-message-disabled')
+      setTimeout(() => {
+          getMessage.remove()
+      }, 2001)
+  }, 6000)
+
+}

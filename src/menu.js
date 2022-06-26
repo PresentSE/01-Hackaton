@@ -1,11 +1,5 @@
 import { Menu } from "./core/menu";
-import { changePosition } from "./util_func";
-import { ShapeModule } from "./modules/shape.module";
-import { Sound } from "./modules/sound.module";
-import { MessageModule } from "./modules/message.module";
-import { ClicksModule } from "./modules/clicks.module";
-import { BackgroundModule } from "./modules/background.module";
-import { TimerModule } from "./modules/timer.module";
+import { changePosition } from "./utils";
 
 export class ContextMenu extends Menu {
   constructor(selector) {
@@ -30,21 +24,16 @@ export class ContextMenu extends Menu {
     this.el.classList.remove("open");
   }
 
-  add() {
+  add(module) {
+    this.el.insertAdjacentHTML('beforeend', module.toHTML());
+        const newModule = this.el.querySelector(`[data-type='${module.type}']`);
+    }
+    /*
     const shapeModule = new ShapeModule("shape", "Создать фигуру").toHTML();
     const soundModule = new Sound("sound", "Случайный звук").toHTML();
-    const messageModule = new MessageModule(
-      "message",
-      "Создать сообщение"
-    ).toHTML();
-    const clicksModule = new ClicksModule(
-      "click",
-      "Расчет кликов за 3 сек"
-    ).toHTML();
-    const backgroundModule = new BackgroundModule(
-      "background",
-      "Изменить фон"
-    ).toHTML();
+    const messageModule = new MessageModule("message", "Создать сообщение").toHTML();
+    const clicksModule = new ClicksModule("click", "Расчет кликов за 3 сек").toHTML();
+    const backgroundModule = new BackgroundModule("background", "Изменить фон").toHTML();
     const timerModule = new TimerModule("timer", "Таймер отсчёта").toHTML();
     this.el.insertAdjacentHTML(
       "afterbegin",
@@ -57,5 +46,5 @@ export class ContextMenu extends Menu {
     ${timerModule}
    `
     );
+    */
   }
-}
